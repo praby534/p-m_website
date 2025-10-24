@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P & M Tax Consult - Forms</title>
+</head>
+<body>
+    <h1>Forms Detection Page</h1>
+    
+    <!-- Contact Form -->
+    <form name="contact" netlify netlify-honeypot="bot-field">
+        <h2>Contact Form</h2>
+        <p>
+            <label>Name: <input type="text" name="name" required /></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" required /></label>
+        </p>
+        <p>
+            <label>Phone: <input type="tel" name="phone" /></label>
+        </p>
+        <p>
+            <label>Subject: <input type="text" name="subject" /></label>
+        </p>
+        <p>
+            <label>Message: <textarea name="message" required></textarea></label>
+        </p>
+        <p style="display: none;">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+        <p>
+            <button type="submit">Send Message</button>
+        </p>
+    </form>
+    
+    <!-- Booking Form -->
+    <form name="booking" netlify netlify-honeypot="bot-field">
+        <h2>Booking Form</h2>
+        <p>
+            <label>Name: <input type="text" name="name" required /></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" required /></label>
+        </p>
+        <p>
+            <label>Phone: <input type="tel" name="phone" required /></label>
+        </p>
+        <p>
+            <label>Service: <input type="text" name="service" required /></label>
+        </p>
+        <p>
+            <label>Preferred Date: <input type="date" name="preferredDate" /></label>
+        </p>
+        <p>
+            <label>Preferred Time: <input type="text" name="preferredTime" /></label>
+        </p>
+        <p>
+            <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+            <label>Preferred ISO DateTime: <input type="text" name="preferred_iso_datetime" /></label>
+        </p>
+        <p style="display: none;">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+        <p>
+            <button type="submit">Book Consultation</button>
+        </p>
+    </form>
+</body>
+</html>

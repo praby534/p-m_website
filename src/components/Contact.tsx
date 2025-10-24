@@ -51,13 +51,24 @@ const Contact: React.FC = () => {
       formDataToSend.append('message', formData.message)
       formDataToSend.append('bot-field', formData.honeypot)
       
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString()
-      })
+      // Try different endpoints for Netlify Forms
+      const endpoints = ['/', '/forms.html', '/contact']
+      
+      let response = null
+      for (const endpoint of endpoints) {
+        try {
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formDataToSend as any).toString()
+          })
+          if (response.ok) break
+        } catch (err) {
+          continue
+        }
+      }
 
-      if (response.ok) {
+      if (response && response.ok) {
         setSubmitStatus('success')
         setFormData({
           name: '',
