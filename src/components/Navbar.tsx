@@ -28,9 +28,10 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/images/logo.png" 
+              src="/images/legacy/logo.png" 
               alt={`${siteContent.name} Logo`}
               className="h-10 w-auto"
+              loading="eager"
             />
             <span className="font-bold text-lg">{siteContent.name}</span>
           </div>
