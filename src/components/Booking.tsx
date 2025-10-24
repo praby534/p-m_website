@@ -69,7 +69,7 @@ const Booking: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Use Netlify Forms - 100% FREE, no recurring costs
+      // Official Netlify Forms implementation
       // Email destination: prabhanshutripathi534@gmail.com
       const formDataToSend = new FormData()
       formDataToSend.append('form-name', 'booking')

@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Use Netlify Forms - 100% FREE, no recurring costs
+      // Official Netlify Forms implementation
       // Email destination: prabhanshutripathi534@gmail.com
       const formDataToSend = new FormData()
       formDataToSend.append('form-name', 'contact')
@@ -51,24 +51,13 @@ const Contact: React.FC = () => {
       formDataToSend.append('message', formData.message)
       formDataToSend.append('bot-field', formData.honeypot)
       
-      // Try different endpoints for Netlify Forms
-      const endpoints = ['/', '/forms.html', '/contact']
-      
-      let response = null
-      for (const endpoint of endpoints) {
-        try {
-          response = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formDataToSend as any).toString()
-          })
-          if (response.ok) break
-        } catch (err) {
-          continue
-        }
-      }
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      })
 
-      if (response && response.ok) {
+      if (response.ok) {
         setSubmitStatus('success')
         setFormData({
           name: '',
