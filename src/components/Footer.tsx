@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src="/images/legacy/logo.png" 
+                  src="/images/logo.png" 
                   alt={`${siteContent.name} Logo`}
                   className="h-8 w-auto"
                 />
