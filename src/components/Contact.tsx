@@ -40,21 +40,23 @@ const Contact: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Use Netlify Forms - 100% FREE, no recurring costs
-      // Email destination: prabhanshutripathi534@gmail.com
-      const formDataToSend = new FormData()
-      formDataToSend.append('form-name', 'contact')
-      formDataToSend.append('name', formData.name)
-      formDataToSend.append('email', formData.email)
-      formDataToSend.append('phone', formData.phone)
-      formDataToSend.append('subject', formData.subject)
-      formDataToSend.append('message', formData.message)
-      formDataToSend.append('_replyto', formData.email)
+      // Use Formspree for Vercel deployment
+      const formspreeEndpoint = 'YOUR_FORMSPREE_ENDPOINT_HERE' // Replace with your actual Formspree endpoint
       
-      const response = await fetch('/', {
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString()
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `Contact Form: ${formData.subject || 'General Inquiry'}`,
+          _replyto: formData.email
+        })
       })
 
       if (response.ok) {
@@ -176,14 +178,11 @@ const Contact: React.FC = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-                {/* Netlify form detection */}
-                <input type="hidden" name="form-name" value="contact" />
-                
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Honeypot field - hidden from users */}
                 <input
                   type="text"
-                  name="bot-field"
+                  name="honeypot"
                   value={formData.honeypot}
                   onChange={handleChange}
                   style={{ display: 'none' }}

@@ -69,26 +69,28 @@ const Booking: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Use Netlify Forms - 100% FREE, no recurring costs
-      // Email destination: prabhanshutripathi534@gmail.com
-      const formDataToSend = new FormData()
-      formDataToSend.append('form-name', 'booking')
-      formDataToSend.append('name', formData.name)
-      formDataToSend.append('email', formData.email)
-      formDataToSend.append('phone', formData.phone)
-      formDataToSend.append('service', formData.service)
-      formDataToSend.append('preferredDate', formData.preferredDate)
-      formDataToSend.append('preferredTime', formData.preferredTime)
-      formDataToSend.append('message', formData.message)
-      formDataToSend.append('preferred_iso_datetime', formData.preferredDate && formData.preferredTime 
-        ? new Date(`${formData.preferredDate}T${formData.preferredTime.split(' ')[0]}:00+05:30`).toISOString()
-        : '')
-      formDataToSend.append('_replyto', formData.email)
+      // Use Formspree for Vercel deployment
+      const formspreeEndpoint = 'YOUR_FORMSPREE_ENDPOINT_HERE' // Replace with your actual Formspree endpoint
       
-      const response = await fetch('/', {
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString()
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          message: formData.message,
+          preferred_iso_datetime: formData.preferredDate && formData.preferredTime 
+            ? new Date(`${formData.preferredDate}T${formData.preferredTime.split(' ')[0]}:00+05:30`).toISOString()
+            : null,
+          _subject: `Booking Request from ${formData.name}`,
+          _replyto: formData.email
+        })
       })
 
       if (response.ok) {
@@ -151,14 +153,11 @@ const Booking: React.FC = () => {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6" name="booking" data-netlify="true" data-netlify-honeypot="bot-field">
-              {/* Netlify form detection */}
-              <input type="hidden" name="form-name" value="booking" />
-              
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field - hidden from users */}
               <input
                 type="text"
-                name="bot-field"
+                name="honeypot"
                 value={formData.honeypot}
                 onChange={handleChange}
                 style={{ display: 'none' }}
