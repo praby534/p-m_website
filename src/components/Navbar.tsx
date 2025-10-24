@@ -27,9 +27,8 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            {/* TODO: Replace with actual logo file */}
             <img 
-              src="/images/logo-placeholder.svg" 
+              src="/images/logo.png" 
               alt={`${siteContent.name} Logo`}
               className="h-10 w-auto"
             />

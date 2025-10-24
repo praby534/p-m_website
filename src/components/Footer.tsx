@@ -18,9 +18,8 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center space-x-3 mb-4">
-                {/* TODO: Replace with actual logo file */}
                 <img 
-                  src="/images/logo-placeholder.svg" 
+                  src="/images/logo.png" 
                   alt={`${siteContent.name} Logo`}
                   className="h-8 w-auto"
                 />
