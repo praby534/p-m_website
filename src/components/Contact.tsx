@@ -41,6 +41,7 @@ const Contact: React.FC = () => {
 
     try {
       // Use Netlify Forms - 100% FREE, no recurring costs
+      // Email destination: prabhanshutripathi534@gmail.com
       const formDataToSend = new FormData()
       formDataToSend.append('form-name', 'contact')
       formDataToSend.append('name', formData.name)
@@ -48,6 +49,7 @@ const Contact: React.FC = () => {
       formDataToSend.append('phone', formData.phone)
       formDataToSend.append('subject', formData.subject)
       formDataToSend.append('message', formData.message)
+      formDataToSend.append('_replyto', formData.email)
       
       const response = await fetch('/', {
         method: 'POST',

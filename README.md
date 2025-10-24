@@ -102,6 +102,7 @@ All content is stored in JSON files in the `/content` folder:
 - Uses Netlify Forms (100% FREE)
 - Includes honeypot spam protection
 - Client-side validation for required fields
+- **Email destination**: prabhanshutripathi534@gmail.com
 - **No recurring costs ever!**
 
 ### Booking Form
@@ -109,6 +110,7 @@ All content is stored in JSON files in the `/content` folder:
 - Includes preferred date/time selection
 - Default time slots: 09:00, 10:00, 11:00, 14:00, 15:00, 16:00 IST
 - Hidden `preferred_iso_datetime` field for calendar integration
+- **Email destination**: prabhanshutripathi534@gmail.com
 - **No recurring costs ever!**
 
 ### Zapier Integration (Optional)

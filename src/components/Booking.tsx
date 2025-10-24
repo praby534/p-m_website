@@ -70,6 +70,7 @@ const Booking: React.FC = () => {
 
     try {
       // Use Netlify Forms - 100% FREE, no recurring costs
+      // Email destination: prabhanshutripathi534@gmail.com
       const formDataToSend = new FormData()
       formDataToSend.append('form-name', 'booking')
       formDataToSend.append('name', formData.name)
@@ -82,6 +83,7 @@ const Booking: React.FC = () => {
       formDataToSend.append('preferred_iso_datetime', formData.preferredDate && formData.preferredTime 
         ? new Date(`${formData.preferredDate}T${formData.preferredTime.split(' ')[0]}:00+05:30`).toISOString()
         : '')
+      formDataToSend.append('_replyto', formData.email)
       
       const response = await fetch('/', {
         method: 'POST',
