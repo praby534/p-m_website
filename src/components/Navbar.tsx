@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/images/founder.jpg" 
+              src="/images/logo.jpg" 
               alt={`${siteContent.name} Logo`}
               className="h-10 w-auto"
               loading="eager"
