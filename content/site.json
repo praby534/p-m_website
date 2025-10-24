@@ -1,0 +1,25 @@
+{
+  "name": "P & M Tax Consult",
+  "tagline": "Experts in Indirect Taxation — Customs | GST | Central Excise | Service Tax",
+  "description": "We are a Kolkata-based consultancy firm specializing in indirect taxation, offering representation and advisory services across India in matters of Customs, GST, Central Excise, and Service Tax.",
+  "contact": {
+    "phone": "98300 42623 / 98311 43849 / 82406 81267",
+    "email": "taxconsultpm@gmail.com",
+    "address": "OLISA HOUSE, 5th Floor, Room No. 519\n4 Government Place North, Kolkata – 700001, West Bengal, India"
+  },
+  "founder": {
+    "name": "Harendra Kumar Pandey",
+    "title": "Managing Partner",
+    "bio": "Experienced tax consultant specializing in indirect taxation with extensive expertise in Customs, GST, and legacy tax laws.",
+    "photo": "founder.jpg"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose P & M Tax Consult",
+    "points": [
+      "Specialized expertise in Indirect Taxation",
+      "Representation before departmental authorities, tribunals, and High Court",
+      "Comprehensive services from Assessment to Appellate proceedings",
+      "Kolkata-based with pan-India service coverage"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "customs",
+    "title": "Customs",
+    "description": "Classification, valuation, exemptions, import/export disputes."
+  },
+  {
+    "id": "gst",
+    "title": "Goods and Services Tax (GST)",
+    "description": "Registration, compliance, audits, and appellate litigation."
+  },
+  {
+    "id": "legacy-laws",
+    "title": "Legacy Laws",
+    "description": "Central Excise & Service Tax cases before authorities and tribunals."
+  },
+  {
+    "id": "litigation-support",
+    "title": "Litigation Support",
+    "description": "Drafting appeals and representation before Appellate Tribunals and High Courts."
+  }
+]
