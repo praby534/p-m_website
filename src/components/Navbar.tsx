@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
               alt={`${siteContent.name} Logo`}
               className="h-10 w-auto"
               loading="eager"
+              onError={(e) => console.log('Logo failed to load:', e)}
             />
             <span className="font-bold text-lg">{siteContent.name}</span>
           </div>
